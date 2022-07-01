@@ -26,7 +26,7 @@ extension FireTVDiscovery: UIApplicationDelegate {
     }
 }
 
-extension FireTVDiscovery: UIViewController<DiscoveryListener> {
+extension FireTVDiscovery: DiscoveryListener {
     func deviceDiscovered(RemoteMediaPlayer: device) {
         print("device is discovered")
     }
