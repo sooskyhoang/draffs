@@ -27,11 +27,11 @@ extension FireTVDiscovery: UIApplicationDelegate {
 }
 
 extension FireTVDiscovery: DiscoveryListener {
-    func deviceDiscovered(RemoteMediaPlayer: device) {
+    func deviceDiscovered(_ device: RemoteMediaPlayer) {
         print("device is discovered")
     }
     
-    func deviceLost(RemoteMediaPlayer: device) {
+    func deviceLost(_ device: RemoteMediaPlayer) {
         print("device is lost")
     }
     
