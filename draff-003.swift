@@ -11,7 +11,7 @@ class FireTVDiscovery: UIViewController {
     
     override func viewDidLoad() {
         discoveryController = DiscoveryController()
-        discoveryController?.searchPlayer(withId: "amzn.thin.pl", andListener: self, andEnableLogs: true)
+        discoveryController?.searchPlayer(withId: "amzn.thin.pl", andListener: self)
     }
 }
 
@@ -21,7 +21,6 @@ extension FireTVDiscovery: UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        selectedDevice?.remove(self)
         discoveryController?.close()
     }
 }
