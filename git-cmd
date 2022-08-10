@@ -1,0 +1,166 @@
+1. Khởi tạo git
+git init
+
+2. Cấu hình git
+git config --global user.name "Nguyen Van Hoang"
+git config --global user.email "vanhoang@soosky.co"
+
+Kiểm tra lại config xem đã đúng chưa
+git config --list
+
+3. Repository
+Repository là gì: Là kho lưu trữ dữ liệu của 1 dự án
+Local Repository: Là repo phía local của developer, nó được đồng bộ lên remote repo khi bạn làm việc với git
+Remote Repository: Là repo được lưu trữ ở git trung tâm ví dụ như github, bitbucket, backlog
+
+4. Git Branch
+Branch là gì
+Trong 1 dự án có nhiều task vụ khác nhau, chính vì vậy người ta phải dùng branch để phân nhánh mỗi task vụ đó 
+thành 1 branch riêng biệt để lưu lại luồng lịch sử làm việc cho toàn bộ dự án. Branch đã phân nhánh sẽ không ảnh 
+hưởng đến branch khác nên có thể tiến hành nhiều thay đổi đồng thời trong cùng 1 repository
+Branch Master
+Branch Release(Staging)
+Branch Develop
+Branch Feature
+Branch Hostfix
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+5. Các lệnh liên quan tới branch
+
+5.1 List tất cả branch
+git branch
+
+5.2 Tạo branch mới (sao chép từ master vào develop)
+git branch develop
+
+5.3 Tạo branch mới và chuyển qua làm việc với branch mới tạo
+git checkout -b release
+
+5.4 Lệnh chuyển đổi giữa các branch
+git checkout [tên branch]
+Chú ý: trước khi chuyển branch phải commit code lên branch hiện tại không thì code sẽ bị mất
+
+5.5 Xóa branch
+git branch -d ＜tên branch cần xóa＞
+Chú ý: với câu lệnh trên bắt buộc dữ liệu phải được merge vào master, không thì bạn sẽ nhận được báo lỗi
+
+Trường hợp branch muốn xóa chưa được merge vào master thì bạn phải dùng câu lệnh
+git branch -D ＜tên branch cần xóa＞
+Chú ý: trường hợp này toàn bộ các commit lên branch này sẽ bị mất
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+6. Merge
+6.1 Lệnh Git merge branch
+git merge ＜tên nhánh＞
+
+ví dụ có 2 nhánh A và B. Tiến hành merge A vào B
+Step 1: git checkout [nhánh B]
+Step 2: git merge A
+
+6.2 Xử lý conflict(xung đột) khi merge code
+Đoạn bị xung đột được bắt đầu bằng ＜＜＜＜＜＜＜ HEAD và kết thúc tại ＞＞＞＞＞＞＞ 
+Sửa conflict xong thì tiến hành đưa lại nội dung lên branch được merge vào
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Lệnh tra lại lịch sử
+git log
+git log --oneline
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Thay đổi nội dung commit lần trước
+Sửa lại message commit bị nhầm
+ git commit --amend
+Trường hợp add thiếu file hoặc sửa lại file đã commit
+git add [file bị thiếu hoặc file cần sửa lại]
+git commit --amend
+
+Undo lại commit
+Trường hợp 1: Muốn "undo" thay đổi trên một file cố định trước khi commit
+git checkout -- [đường dẫn/tên file]
+
+Nếu muốn undo hẳn một commit (do đã lỡ commit xong rồi) thì cần chỉ định mục tiêu
+git reset --soft HEAD~1
+Ở đây HEAD~1 nghĩa là trước 1 commit. Mình dùng soft để lưu lại những thay đổi chưa commit và 
+chỉ bỏ đi phần đã commit từ lần trước
+
+Nếu muốn bỏ cả phần đã commit từ lần trước và phần chưa commit thì đổi soft thành hard
+git reset --hard HEAD~1
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Git Clean
+Xóa hết các files chưa được commit
+git clean --force
+
+Thay đổi tên tác giả của commit
+git config user.name "Nguyen Van Doanh"
+git config user.email doanh@gmail.com
+git commit --amend --reset-author
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+1.Git clone thông qua HTTPS
+2.Git clone thông qua SSH
+ssh-keygen -t rsa
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+1.Git  Stash
+Git stash được sử dụng khi muốn lưu lại các thay đổi chưa commit, hay sử dụng khi bạn chuyển qua 
+một branch khác mà branch hiện tại đang làm chưa xong.
+
+2. Các lệnh liên quan
+Lưu lại trạng thái hiện tại của branch
+$ git stash save
+Lưu lại toàn bộ trạng thái hiện tại của branch
+Mỗi lần lưu sẽ tạo thành 1 version tại thời điểm đó
+Xem lại danh sách đã lưu
+git stash list
+Nếu muốn xem cả nội dung của từng thay đổi thì thêm option -p
+ $ git stash list -p
+hoặc xem nội dung cụ thể hơn nữa của lần thay đổi thứ 1:
+$ git stash show stash@{1}
+Lấy lại thay đổi
+$ git stash apply stash@{1}
+Xóa
+git stash drop
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+1. What is a Git tag
+Used to determine the history of commits
+Return to the version tag if necessary
+
+2. Git TAG command
+- Make a tag
+git tag -a <tên tag> -m '<tag comment>'
+Ex: git tag -a v1.0 -m 'release login function'
+PS: Can create tags without commenting
+
+- Add tag to remote
+git push origin <tag name>
+Ex: git push origin v1.0
+push all tag
+git push origin --tags
+
+- History commit git tag
+git tag -a <tag name> -m '<comment>' <commit hash>
+ex: git tag -a v1.2 -m 'version 1.2' 9fceb02
+
+- Show list tag
+$ git tag
+
+- Confirm a specific tag
+git show <tag name>
+Ex: git show v1.0
+
+- Delete tag
+git tag --delete v1.1 (local)
+git push --delete origin v1.1 (remote)
+
+- Create a new branch from a tag
+$ git checkout -b <new branch name> v1.0
