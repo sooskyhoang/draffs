@@ -1,6 +1,11 @@
 1. Khởi tạo git
 git init
 
+# Push code to github
+git add .
+git commit -m "message"
+git push
+
 2. Cấu hình git
 git config --global user.name "Nguyen Van Hoang"
 git config --global user.email "vanhoang@soosky.co"
