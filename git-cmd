@@ -5,6 +5,9 @@ git init
 git config --global user.name "Nguyen Van Hoang"
 git config --global user.email "vanhoang@soosky.co"
 
+Set default branch
+git config --global init.defaultBranch main
+
 Kiểm tra lại config xem đã đúng chưa
 git config --list
 
