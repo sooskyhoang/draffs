@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackViewController" customModule="chatGPT2" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="f8S-Qz-dwT" id="c9z-is-f9A"/>
+                <outlet property="collectionViewHeight" destination="dg4-pw-xei" id="fHA-Tc-fUW"/>
+                <outlet property="emailTextField" destination="N9d-0m-U7s" id="Y4E-hd-3aD"/>
+                <outlet property="feedbackTextView" destination="cYM-Gq-BvC" id="FJM-Q6-TXs"/>
+                <outlet property="scrollContentViewHeight" destination="Y4b-yr-eT9" id="039-gk-jZ9"/>
+                <outlet property="submitBtn" destination="u5g-QX-kBL" id="Wa5-p0-yH1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-QX-kBL">
+                    <rect key="frame" x="18.666666666666657" y="727" width="337.66666666666674" height="55"/>
+                    <color key="backgroundColor" red="0.0" green="0.23921568627450979" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="Ahg-tt-8cc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rr-tT-rnu">
+                    <rect key="frame" x="0.0" y="46.666666666666686" width="375" height="635.33333333333326"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOx-4W-YMN" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Email*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-Sj-Efh">
+                                    <rect key="frame" x="18.666666666666664" y="0.0" width="81.333333333333343" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="eEg-lb-7F4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-0m-U7s">
+                                    <rect key="frame" x="18.666666666666657" y="32.000000000000007" width="337.66666666666674" height="49.999999999999993"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="4LZ-J2-VqQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Feedback*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-Pk-fgj">
+                                    <rect key="frame" x="18.666666666666671" y="113" width="113.00000000000001" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="7Sf-wS-lB1"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYM-Gq-BvC">
+                                    <rect key="frame" x="18.666666666666657" y="145" width="337.66666666666674" height="157"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="157" id="eQl-bQ-Be3"/>
+                                    </constraints>
+                                    <color key="textColor" systemColor="labelColor"/>
+                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images Attach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb4-nu-6af">
+                                    <rect key="frame" x="18.666666666666664" y="326" width="103.33333333333334" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="HYv-8h-hz3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="f8S-Qz-dwT">
+                                    <rect key="frame" x="0.0" y="364" width="375" height="90"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="90" id="dg4-pw-xei"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="86p-JX-LWp">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="cYM-Gq-BvC" firstAttribute="top" secondItem="na8-Pk-fgj" secondAttribute="bottom" constant="8" id="Ejl-gd-ljG"/>
+                                <constraint firstItem="Fkh-Sj-Efh" firstAttribute="top" secondItem="FOx-4W-YMN" secondAttribute="top" id="G4w-KR-cxc"/>
+                                <constraint firstItem="cYM-Gq-BvC" firstAttribute="leading" secondItem="N9d-0m-U7s" secondAttribute="leading" id="IHK-bh-PSw"/>
+                                <constraint firstItem="cYM-Gq-BvC" firstAttribute="trailing" secondItem="N9d-0m-U7s" secondAttribute="trailing" id="Imk-ld-LbJ"/>
+                                <constraint firstItem="N9d-0m-U7s" firstAttribute="centerX" secondItem="FOx-4W-YMN" secondAttribute="centerX" id="LyR-ha-iyd"/>
+                                <constraint firstItem="f8S-Qz-dwT" firstAttribute="top" secondItem="mb4-nu-6af" secondAttribute="bottom" constant="14" id="MlT-fx-igc"/>
+                                <constraint firstItem="na8-Pk-fgj" firstAttribute="top" secondItem="N9d-0m-U7s" secondAttribute="bottom" constant="31" id="Q77-ae-FKP"/>
+                                <constraint firstAttribute="height" constant="500" id="Y4b-yr-eT9"/>
+                                <constraint firstItem="N9d-0m-U7s" firstAttribute="width" secondItem="FOx-4W-YMN" secondAttribute="width" multiplier="0.9" id="YE9-aF-fyD"/>
+                                <constraint firstItem="f8S-Qz-dwT" firstAttribute="leading" secondItem="FOx-4W-YMN" secondAttribute="leading" id="YIH-aM-1KJ"/>
+                                <constraint firstItem="mb4-nu-6af" firstAttribute="leading" secondItem="N9d-0m-U7s" secondAttribute="leading" id="aXH-xq-IwM"/>
+                                <constraint firstAttribute="trailing" secondItem="f8S-Qz-dwT" secondAttribute="trailing" id="iQT-3y-Y06"/>
+                                <constraint firstItem="mb4-nu-6af" firstAttribute="top" secondItem="cYM-Gq-BvC" secondAttribute="bottom" constant="24" id="mGJ-Pa-LJ5"/>
+                                <constraint firstItem="N9d-0m-U7s" firstAttribute="top" secondItem="Fkh-Sj-Efh" secondAttribute="bottom" constant="8" id="pWO-o0-Mrm"/>
+                                <constraint firstItem="Fkh-Sj-Efh" firstAttribute="leading" secondItem="N9d-0m-U7s" secondAttribute="leading" id="ppQ-F7-SAy"/>
+                                <constraint firstItem="na8-Pk-fgj" firstAttribute="leading" secondItem="N9d-0m-U7s" secondAttribute="leading" id="ybf-iN-xQf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="FOx-4W-YMN" firstAttribute="leading" secondItem="3rr-tT-rnu" secondAttribute="leading" id="3xc-M8-orl"/>
+                        <constraint firstAttribute="bottom" secondItem="FOx-4W-YMN" secondAttribute="bottom" id="daZ-Yb-2sm"/>
+                        <constraint firstAttribute="trailing" secondItem="FOx-4W-YMN" secondAttribute="trailing" id="iP0-9v-xjQ"/>
+                        <constraint firstItem="FOx-4W-YMN" firstAttribute="top" secondItem="3rr-tT-rnu" secondAttribute="top" id="wVl-W9-ZLo"/>
+                        <constraint firstItem="FOx-4W-YMN" firstAttribute="width" secondItem="3rr-tT-rnu" secondAttribute="width" id="wwA-hq-e3p"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="VwL-uP-SeS"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="zN9-1K-L7Q"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3rr-tT-rnu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="46.5" id="7a8-Qd-Ian"/>
+                <constraint firstItem="u5g-QX-kBL" firstAttribute="top" secondItem="3rr-tT-rnu" secondAttribute="bottom" constant="45" id="7az-bS-cgK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3rr-tT-rnu" secondAttribute="trailing" id="Eqe-ds-2Jv"/>
+                <constraint firstItem="3rr-tT-rnu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RaL-er-var"/>
+                <constraint firstItem="u5g-QX-kBL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="SNW-tS-leu"/>
+                <constraint firstItem="u5g-QX-kBL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dsk-86-Cl7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u5g-QX-kBL" secondAttribute="bottom" constant="30" id="va3-y8-yB4"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
